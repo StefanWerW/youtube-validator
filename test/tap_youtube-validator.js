@@ -59,8 +59,8 @@ test('valid urls', function(t) {
 	})
   
   utils.validateUrl(urlCorr5, function(res, err){
-    t.notEqual(res, null, 'urlCorr4 res should not be null')
-    t.equal(err, null, 'urlCorr4 err should be null')
+    t.notEqual(res, null, 'urlCorr5 res should not be null')
+    t.equal(err, null, 'urlCorr5 err should be null')
   })
 
 	t.end()
