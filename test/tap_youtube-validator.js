@@ -59,7 +59,6 @@ test('valid urls', function(t) {
 	t.end()
 })
 
-
 test('ID validate adapter', function(t) {
   var wrongID = 'this is wrong'
   var correctID = '2XH5_qafR8k'
