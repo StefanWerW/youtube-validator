@@ -36,6 +36,7 @@ test('valid urls', function(t) {
 	var urlCorr2 = 'www.youtube.com/watch?v=2XH5_qafR8k'
 	var urlCorr3 = 'http://www.youtube.com/watch?v=2XH5_qafR8k'
 	var urlCorr4 = 'www.YOUTUBE.COM/watch?v=2XH5_qafR8k'
+	var urlCorr5 =  'https://www.youtube.com/watch?v=BHOJ2814J9Q'
 
 	utils.validateUrl(urlCorr1, function(res, err){
 		t.notEqual(res, null, 'urlCorr1 res should not be null')
@@ -56,6 +57,12 @@ test('valid urls', function(t) {
 		t.notEqual(res, null, 'urlCorr4 res should not be null')
 		t.equal(err, null, 'urlCorr4 err should be null')
 	})
+  
+  utils.validateUrl(urlCorr5, function(res, err){
+    t.notEqual(res, null, 'urlCorr5 res should not be null')
+    t.equal(err, null, 'urlCorr5 err should be null')
+  })
+
 	t.end()
 })
 
