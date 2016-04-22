@@ -1,4 +1,4 @@
-##youtube-validator
+##youtube-validate
 
 DISCLAIMER: This is a fork of [a module made by gpestana](https://github.com/gpestana/youtube-validator/), but with some fixes applied.
 
@@ -7,7 +7,7 @@ It validates wether a given url or id are valid youtube videos.
 ---
 
 ####how to install
-`npm install youtube-validator`
+`npm install youtube-validate`
 
 ####what is valid and invalid url/id?
 * valid url/id are all strings that do match with an existent youtube video url or id, depending on the function called. ex:
@@ -20,7 +20,7 @@ var validUrl4 = 'www.YOUTUBE.COM/watch?v=2XH5_qafR8k'
 var validID = '2XH5_qafR8k'
 ```
 
-* invalid url/id are the same as above, but on the other waya around.  ex:  
+* invalid url/id are the same as above, but on the other way around.  ex:  
 
 ```javascript
 var invalidUrl1 = 'random_stuff_here'
@@ -33,7 +33,7 @@ var invalidID = 'id_that_does_not_exist'
 ###how to use
 
 ```javascript
-var validator = require('youtube-validator')
+var validator = require('youtube-validate')
 //..
 validator.validateUrl(url, function(res, err) {
   if(err) //err
