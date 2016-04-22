@@ -1,6 +1,6 @@
 {
   "name": "youtube-validate",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Fork of https://github.com/gpestana/youtube-validator/, checks validity of youtube urls and ids",
   "main": "index.js",
   "babel": {
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "test": "node test/tap_youtube-validator.js",
-    "build": "babel-cli --preset babel-preset-es2015",
+    "build": "babel --preset babel-preset-es2015",
     "prepublish": "npm run build"
   },
   "repository": {
