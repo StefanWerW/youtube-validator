@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/matiaszanolli/youtube-validate"
+    "url": "https://github.com/matiaszanolli/youtube-validator"
   },
   "keywords": [
     "youtube",
@@ -36,7 +36,7 @@
   "author": "matiaszanolli",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/matiaszanolli/youtube-validate/issues"
+    "url": "https://github.com/matiaszanolli/youtube-validator/issues"
   },
-  "homepage": "https://github.com/matiaszanolli/youtube-validate"
+  "homepage": "https://github.com/matiaszanolli/youtube-validator"
 }
