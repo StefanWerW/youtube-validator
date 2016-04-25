@@ -2,7 +2,7 @@
 
 require('babel-core/register');
 var test	= require('blue-tape'),
-utils 		= require('../lib/youtube-validator.js')
+utils 		= require('../src/youtube-validator.js')
 
 test('wrong urls 1', function(t) {
 	var urlWrong1 = 'asdasd'
