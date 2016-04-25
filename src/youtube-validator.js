@@ -48,7 +48,7 @@ function youtubeRequest(videoID) {
     if (res.statusCode == '404' || res.statusCode == '302') {
       throw ('error: youtube video does not exist')
     } else {
-      return response.json()
+      return res.json()
     }
   }).catch(e => {
       throw('error: something occured', e)
