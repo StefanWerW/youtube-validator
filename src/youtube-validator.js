@@ -37,20 +37,33 @@ export function validateUrl(url) {
 }
 
 function youtubeRequest(videoID) {
-  let config = {
-    method: 'GET',
-    mode: 'no-cors',
-    headers: { 'Content-Type':'application/json' },
-  }
   videoID = videoID.replace('/watch?v=', '')
-  return fetch('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + escape(videoID) + '&format=json', config)
-  .then(res => {
-    if (res.statusCode == '404' || res.statusCode == '302') {
-      throw ('error: youtube video does not exist')
-    } else {
-      return res.json()
-    }
-  }).catch(e => {
-      throw('error: something occured', e)
+  return new Promise((fulfill, reject) => {
+    let options = {
+      hostname: 'www.youtube.com',
+      port: 80,
+      path: '/oembed?url=http://www.youtube.com/watch?v=' + escape(videoID) + '&format=json',
+      method: 'HEAD',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    var req = http.request(options, function (res) {
+      if (res.statusCode == '404' || res.statusCode == '302') {
+        reject('error: youtube video does not exist')
+      } else {
+        fulfill(videoID)
+      }
+
+      req.on('data', res => {
+        console.log(res)
+      })
+
+      req.on('error', function (e) {
+        reject('error: something occured')
+      })
+    })
+    req.shouldKeepAlive = false
+    req.end()
   })
 }

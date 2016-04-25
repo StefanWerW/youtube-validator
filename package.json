@@ -1,6 +1,6 @@
 {
   "name": "youtube-validate",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Fork of https://github.com/gpestana/youtube-validator/, checks validity of youtube urls and ids",
   "main": "lib/youtube-validator.js",
   "babel": {
@@ -8,12 +8,12 @@
       "es2015"
     ]
   },
-
   "directories": {
     "test": "test"
   },
   "dependencies": {
     "babel-core": "^6.7.7",
+    "fetch-jsonp": "^1.0.0",
     "lodash": "^4.11.1"
   },
   "devDependencies": {
