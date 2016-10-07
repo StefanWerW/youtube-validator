@@ -1,7 +1,8 @@
 'use strict'
 
 import  _ 	from 'lodash'
-import http from 'http'
+import http from 'https'
+import axios from 'axios'
 
 //adapter for IDs
 export function validateVideoID(id) {
@@ -38,16 +39,19 @@ export function validateUrl(url) {
 
 function youtubeRequest(videoID) {
   videoID = videoID.replace('/watch?v=', '')
+  return axios.head('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + escape(videoID) + '&format=json')
+  /*
   return new Promise((fulfill, reject) => {
     let options = {
       hostname: 'www.youtube.com',
       port: 80,
-      path: '/oembed?url=http://www.youtube.com/watch?v=' + escape(videoID) + '&format=json',
+      path: '/oembed?url=https://www.youtube.com/watch?v=' + escape(videoID) + '&format=json',
       method: 'HEAD',
       headers: {
         'Content-Type': 'application/json'
       }
     };
+
     var req = http.request(options, function (res) {
       if (res.statusCode == '404' || res.statusCode == '302') {
         reject('error: youtube video does not exist')
@@ -65,5 +69,5 @@ function youtubeRequest(videoID) {
     })
     req.shouldKeepAlive = false
     req.end()
-  })
+  })*/
 }
