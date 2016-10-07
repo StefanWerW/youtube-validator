@@ -39,7 +39,12 @@ export function validateUrl(url) {
 
 function youtubeRequest(videoID) {
   videoID = videoID.replace('/watch?v=', '')
-  return axios.head('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + escape(videoID) + '&format=json')
+  return axios.head('https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + escape(videoID) + '&format=json', {
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      }
+  })
   /*
   return new Promise((fulfill, reject) => {
     let options = {
